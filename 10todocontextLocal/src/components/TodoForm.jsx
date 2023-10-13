@@ -14,21 +14,22 @@ function TodoForm() {
 
         // addTodo({id:Date.now(),todo:todo,completed:false})//wha humne date.now as a id de hui h to yha aese kuch khas dene ki need nhi hain
 
-        addTodo({todo:todo,completed:false})//key and value same h to aese bhi ler sakte hain
+        // addTodo({todo:todo,completed:false})//key and value same h to aese bhi ler sakte hain
 
-        // addTodo({ todo, completed: false })
+        addTodo({ todo, completed: false })
         setTodo("")//cleanup kerlo thoda sa
 }
 
   return (
-    <form className="flex">
-          <input
-              onSubmit={add}
-              type="text"
-              placeholder="Write Todo..."
-              className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
-              value={todo}
-              onChange={(e) => { setTodo(e.target.value) }}
+    <form className="flex" onSubmit={add}>
+      <input
+        type="text"
+        placeholder="Write Todo..."
+        className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+        value={todo}
+        onChange={(e) => {
+          setTodo(e.target.value);
+        }}
       />
       <button
         type="submit"
